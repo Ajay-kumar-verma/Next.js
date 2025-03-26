@@ -1,19 +1,41 @@
-import Link from 'next/link'
+"use client";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+ 
+  const navLinks=[
+    {href:'/',
+      name:'Dashboard'
+    },
+    {href:'/about',
+      name:'About'
+    },
+    {href:'/docs',
+      name:'Docs'
+    },
+    {href:'/home',
+      name:'Home'
+    },
+    {href:'/products',
+      name:'Product'
+    },
+    {href:'/profile',
+      name:'Profile'
+    },
+  ]
+
+  const pathname = usePathname();
   return (
     <html lang="en">
       <body>
         {children}
-        <Link style={{margin:'10px'}} href='/'>Dashboard</Link>
-        <Link style={{margin:'10px'}} href='/about'>About</Link>
-        <Link style={{margin:'10px'}} href='/docs'>Docs</Link>
-        <Link style={{margin:'10px'}} href='/home'>Home</Link>
-        <Link style={{margin:'10px'}} href='/products/2143'>Products</Link>
-        <Link style={{margin:'10px'}} href='/profile' replace>Profile</Link>
+
+      {navLinks.map((link,i)=><Link key={i} style={pathname == link.href?{color:'pink',fontSize:'30px',margin:'15px'}:{margin:'10px'}} href={link.href}>{link.name}</Link>)}
 
       </body>
     </html>
