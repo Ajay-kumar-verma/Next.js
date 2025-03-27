@@ -1,14 +1,14 @@
 "use client";
 import Link from "next/link";
-import { redirect, usePathname } from "next/navigation";
+import {  usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
 
 export default function Navbar() {
   const router = useRouter();
   const handleClick = () => {
     // router.push("/")
-    // router.replace("/")
-    redirect("/");
+    router.replace("/")
+    // redirect("/");
   };
 
   const navLinks = [
@@ -18,6 +18,7 @@ export default function Navbar() {
     { href: "/home", name: "Home" },
     { href: "/products", name: "Product" },
     { href: "/profile", name: "Profile" },
+    { href: "/complexDashboard", name: "ComplexDashboard" },
   ];
 
   const pathname = usePathname();
