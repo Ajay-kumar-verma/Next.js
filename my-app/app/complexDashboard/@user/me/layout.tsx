@@ -5,11 +5,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (<>
-  {children}
-  <Link href='/complexDashboard/me' >Cmpdsbrd</Link>
-
-  </>);
+  return (
+    <>
+      {children}
+      <Link href="/complexDashboard/">DashBoard</Link>
+    </>
+  );
 }
 
 // render once in life cycle
