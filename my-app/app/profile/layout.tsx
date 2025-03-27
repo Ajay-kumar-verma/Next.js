@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function page({
   children,
 }: Readonly<{
@@ -18,6 +20,8 @@ export default function page({
           Footer
         </footer>
       </body>
+      <Link href='/articles/breaking-news-123?lang=en'> Read in english</Link>
+      <Link href='/articles/breaking-news-123?lang=fr'> Read in France</Link>
     </html>
   );
 }
