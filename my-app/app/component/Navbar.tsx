@@ -1,8 +1,16 @@
 "use client";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { redirect, usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 export default function Navbar() {
+  const router = useRouter();
+  const handleClick = () => {
+    // router.push("/")
+    // router.replace("/")
+    redirect("/");
+  };
+
   const navLinks = [
     { href: "/", name: "Dashboard" },
     { href: "/about", name: "About" },
@@ -29,6 +37,9 @@ export default function Navbar() {
           {link.name}
         </Link>
       ))}
+      <button type="button" onClick={handleClick}>
+        Click me
+      </button>
     </div>
   );
 }
