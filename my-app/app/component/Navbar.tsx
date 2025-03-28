@@ -19,6 +19,7 @@ export default function Navbar() {
     { href: "/products", name: "Product" },
     { href: "/profile", name: "Profile" },
     { href: "/complexDashboard", name: "ComplexDashboard" },
+    { href: "/f1", name: "f1" },
   ];
 
   const pathname = usePathname();
