@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -7,8 +5,6 @@ export default function RootLayout({
 }>) {
   return (<>
   {children}
-  <Link href='/complexDashboard/me' >Cmpdsbrd</Link>
-
   </>);
 }
 

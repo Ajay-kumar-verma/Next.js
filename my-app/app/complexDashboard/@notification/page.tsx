@@ -1,4 +1,8 @@
-export default function Notification(){
+import Link from "next/link";
 
-    return <h1>Notification</h1>
+export default function Notification(){
+    return <h1>Notification 
+  <Link href='/complexDashboard/mee' >mee</Link>
+
+    </h1>
 }
